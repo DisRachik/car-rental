@@ -1,4 +1,3 @@
-// import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { Gallery } from "./CarsGallery.styled";
 import { getCars } from "service";
@@ -16,7 +15,7 @@ const CarsGallery = () => {
 	}, []);
 
 	useEffect(() => {
-		const featchCars = async page => {
+		const fetchCars = async page => {
 			try {
 				setIsLoading(true);
 
@@ -34,7 +33,7 @@ const CarsGallery = () => {
 			}
 		};
 
-		featchCars(page);
+		fetchCars(page);
 	}, [page]);
 
 	const addNextCars = () => {

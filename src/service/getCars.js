@@ -10,24 +10,11 @@ export const getCars = async page => {
 	};
 
 	const response = await axios.get("car", { params });
-	const data = response.data.map(
-		({ id, img, make, model, year, rentalPrice, address, rentalCompany, type, accessories }) => ({
-			id,
-			img,
-			make,
-			model,
-			year,
-			rentalPrice,
-			address,
-			rentalCompany,
-			type,
-			accessories,
-		}),
-	);
+
 	params.page += 1;
 
 	const nextRes = await axios.get("car", { params });
 	const moreCars = nextRes.data.length;
 
-	return { data, moreCars };
+	return { data: response.data, moreCars };
 };

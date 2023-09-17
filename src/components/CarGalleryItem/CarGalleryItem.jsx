@@ -1,15 +1,21 @@
 import PropTypes from "prop-types";
 import { RiHeart3Line } from "react-icons/ri";
-import { Button } from "components";
+import { Button, Modal } from "components";
 import { Card, ImgWrap, TitleWrap, Title, WorldAccent, Price, InfoCar, IconButton } from "./CarGalleryItem.styled";
+import { useState } from "react";
 
 const CarGalleryItem = ({ car }) => {
 	const { id, img, make, model, year, rentalPrice, address, rentalCompany, type, accessories } = car;
+	const [modalOpen, setModalOpen] = useState(false);
+
 	const infoAddress = address.split(", ").slice(1);
 	const accessor = accessories.reduce((smallest, current) => {
 		return current.length < smallest.length ? current : smallest;
 	});
 	const info = [...infoAddress, rentalCompany, type, make, id, accessor];
+
+	const toggleModal = () => setModalOpen(prevState => !prevState);
+
 	return (
 		<Card>
 			<ImgWrap aria-label={`Foto ${make} ${model}`} imageUrl={img} />
@@ -26,10 +32,14 @@ const CarGalleryItem = ({ car }) => {
 					<li key={item}>{item}</li>
 				))}
 			</InfoCar>
-			<Button minWidth="100%">Learn more</Button>
+			<Button minWidth="100%" onClick={toggleModal}>
+				Learn more
+			</Button>
 			<IconButton>
 				<RiHeart3Line size={18} />
 			</IconButton>
+
+			{modalOpen && <Modal onClose={toggleModal} car={car} />}
 		</Card>
 	);
 };

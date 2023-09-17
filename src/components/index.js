@@ -5,3 +5,4 @@ export { default as CarsGallery } from "./CarsGallery/CarsGallery";
 export { default as CarGalleryItem } from "./CarGalleryItem/CarGalleryItem";
 export { default as Button } from "./Button/Button";
 export { default as LoadMoreBtn } from "./LoadMoreBtn/LoadMoreBtn";
+export { default as Modal } from "./Modal/Modal";
