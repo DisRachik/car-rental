@@ -3,7 +3,8 @@ import "modern-normalize";
 import theme from "./theme";
 
 const GlobalStyles = css`
-	:root {
+	#root {
+		width: 100%;
 		font-family: "Manrope", sans-serif;
 		font-size: ${theme.fontSizes.ultraSmall};
 		line-height: 1.5;
@@ -57,7 +58,6 @@ const GlobalStyles = css`
 		text-decoration: none;
 		color: inherit;
 		cursor: pointer;
-		transition: ${props => props.theme.animation("color")};
 	}
 
 	button {
@@ -67,7 +67,6 @@ const GlobalStyles = css`
 		border: none;
 		${"" /* background-color: transparent; */}
 		cursor: pointer;
-		transition: ${props => props.theme.animation("background-color")};
 	}
 `;
 
