@@ -1,5 +1,11 @@
+import { CarsGallery } from "components";
+
 const Catalog = () => {
-  return <h1>Catalog</h1>;
+	return (
+		<>
+			<CarsGallery />
+		</>
+	);
 };
 
 export default Catalog;
