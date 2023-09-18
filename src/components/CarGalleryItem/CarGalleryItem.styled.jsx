@@ -65,12 +65,6 @@ export const IconButton = styled.button`
 	justify-content: center;
 	align-items: center;
 
-	color: ${theme.colors.light};
+	color: ${props => (props.isCarInFavorite ? theme.colors.accent : theme.colors.light)};
 	background-color: transparent;
-
-	&:hover {
-		svg {
-			background-color: ${theme.colors.accent};
-		}
-	}
 `;

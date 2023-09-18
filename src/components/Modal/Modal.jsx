@@ -132,7 +132,23 @@ const Modal = ({ onClose, car }) => {
 };
 
 Modal.propTypes = {
-	car: PropTypes.object.isRequired,
+	car: PropTypes.shape({
+		id: PropTypes.number.isRequired,
+		img: PropTypes.string.isRequired,
+		make: PropTypes.string.isRequired,
+		model: PropTypes.string.isRequired,
+		year: PropTypes.number.isRequired,
+		address: PropTypes.string.isRequired,
+		type: PropTypes.string.isRequired,
+		fuelConsumption: PropTypes.string.isRequired,
+		engineSize: PropTypes.string.isRequired,
+		description: PropTypes.string.isRequired,
+		accessories: PropTypes.arrayOf(PropTypes.string).isRequired,
+		functionalities: PropTypes.arrayOf(PropTypes.string).isRequired,
+		rentalConditions: PropTypes.string.isRequired,
+		mileage: PropTypes.number.isRequired,
+		rentalPrice: PropTypes.string.isRequired,
+	}),
 	onClose: PropTypes.func.isRequired,
 };
 
