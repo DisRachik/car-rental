@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { RiHeart3Line } from "react-icons/ri";
+import { RiHeart3Line } from "react-icons/ri"; //RiHeartFill
 import { Button, Modal } from "components";
 import { Card, ImgWrap, TitleWrap, Title, WorldAccent, Price, InfoCar, IconButton } from "./CarGalleryItem.styled";
 import { useState } from "react";
@@ -32,7 +32,7 @@ const CarGalleryItem = ({ car }) => {
 					<li key={item}>{item}</li>
 				))}
 			</InfoCar>
-			<Button minWidth="100%" onClick={toggleModal}>
+			<Button type="button" minWidth="100%" onClick={toggleModal}>
 				Learn more
 			</Button>
 			<IconButton>
