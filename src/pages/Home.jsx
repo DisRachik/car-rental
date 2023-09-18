@@ -1,7 +1,8 @@
 import viteLogo from "/vite.svg";
+
 const Home = () => (
 	<div>
-		<img src={viteLogo} alt="React logo" />
+		<img src={viteLogo} alt="Car logo" />
 	</div>
 );
 
